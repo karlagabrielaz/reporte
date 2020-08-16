@@ -1,0 +1,14 @@
+insert into CLIENTE values (1, 'KARLA', 'ZUNIGA', 'MANTA BEACH');
+insert into CLIENTE values (2, 'HELEN', 'ESPINALES', 'CIUDAD DEL MAR');
+
+insert into CATEGORIA values (1, 'TERROR');
+insert into CATEGORIA values (2, 'AMOR');
+
+insert into PELICULA values (1, 'CAMINO HACIA EL TERROR', '2', 'ES UNA PELICULA DE TERROR', '2016', '1');
+insert into PELICULA values (2, 'STAND DE LOS BESOS', '3', 'ES UNA PELICULA DE AMOR','2020', '2');
+
+insert into INVENTARIO values(1, 'INVENTARIO 1', '1');
+insert into INVENTARIO values(2, 'INVENTARIO 2', '2');
+
+insert into ALQUILER values(1, '2017-05-2', '2017-05-24', '1', '1');
+insert into ALQUILER values(2, '2020-03-12', '2020-08-12', '2', '2');
