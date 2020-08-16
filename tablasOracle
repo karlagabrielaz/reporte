@@ -1,0 +1,39 @@
+CREATE TABLE CLIENTE (
+	Id_cliente INT NOT NULL primary KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Apellido VARCHAR(30) NOT NULL,
+	Direccion VARCHAR(50) NOT NULL
+);
+CREATE TABLE CATEGORIA(
+	Id_categoria INT NOT NULL primary key,
+	Nombre VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE PELICULA (
+	Id_pelicula INT NOT NULL primary KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Duracion INT NOT NULL,
+	Descripcion VARCHAR(50) NOT NULL,
+	Anio INT NOT NULL,
+	Id_categoria INT NOT NULL,
+	CONSTRAINT categoria_pelicula_fk FOREIGN KEY(Id_categoria)
+	REFERENCES CATEGORIA (Id_categoria) 
+);
+CREATE TABLE INVENTARIO (
+	Id_inventario INT NOT NULL primary KEY,
+	Nombre VARCHAR(30) NOT NULL,
+	Id_pelicula INT NOT NULL,
+	CONSTRAINT pelicula_inventario_fk FOREIGN KEY(Id_pelicula)
+	REFERENCES PELICULA (Id_pelicula) 
+);
+CREATE TABLE ALQUILER (
+	Id_alquiler INT NOT NULL primary KEY,
+	FechaAlquiler DATE NOT NULL,
+	FechaDevolucion DATE NOT NULL,
+	Id_cliente INT NOT NULL,
+	Id_inventario INT NOT NULL,
+	CONSTRAINT cliente_alquiler_fk FOREIGN KEY(Id_cliente)
+	REFERENCES CLIENTE (Id_cliente),
+	CONSTRAINT inventario_alquiler_fk FOREIGN KEY(Id_inventario)
+	REFERENCES INVENTARIO (Id_inventario) 
+);
